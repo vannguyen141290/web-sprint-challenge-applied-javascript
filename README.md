@@ -65,7 +65,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
-DOM is a structural model in a web page that allows to organize all document and modify them by languages such as JS
+DOM is a structural model of a web page that allows developers to organize all document and modify them by languages such as JS
 
 2. What is an event?
 JS's interaction with HTML is handled through events that occur when the users or the browser manipulate a page. the a page loads, it is called an event 

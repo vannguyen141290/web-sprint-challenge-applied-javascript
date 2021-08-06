@@ -34,10 +34,49 @@ const tabsAppender = (selector) => {
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   axios.get('http://localhost:5000/api/topics')
     .then(res => {
-      console.log(res);
+      // console.log(res);
       const entryPoint = document.querySelector(selector);
       const tabs = res.data.topics;
       entryPoint.appendChild(Tabs(tabs));
+
+      
+      let javascriptLink = document.querySelector('.tab:nth-child(1)');
+      let bootstrapLink = document.querySelector('.tab:nth-child(2)');
+      let technologyLink = document.querySelector('.tab:nth-child(3)');
+      let jqueryLink = document.querySelector('.tab:nth-child(4)');
+      let nodejsLink = document.querySelector('.tab:nth-child(5)');
+
+      javascriptLink.addEventListener('click', () => {
+        cardContainer.textContent = "";
+        res.data.articles.javascript.forEach(item => {
+          cardContainer.appendChild(Card(item));
+        });
+      })
+      bootstrapLink.addEventListener('click', () => {
+        cardContainer.textContent = "";
+        res.data.articles.bootstrap.forEach(item => {
+          cardContainer.appendChild(Card(item));
+        });
+      })
+      technologyLink.addEventListener('click', () => {
+        cardContainer.textContent = "";
+        res.data.articles.technology.forEach(item => {
+          cardContainer.appendChild(Card(item));
+        });
+      })
+      jqueryLink.addEventListener('click', () => {
+        cardContainer.textContent = "";
+        res.data.articles.jquery.forEach(item => {
+          cardContainer.appendChild(Card(item));
+        });
+      })
+      nodejsLink.addEventListener('click', () => {
+        cardContainer.textContent = "";
+        res.data.articles.node.forEach(item => {
+          cardContainer.appendChild(Card(item));
+        });
+      })
+
     })
     .catch(err => {
       console.error(err);
